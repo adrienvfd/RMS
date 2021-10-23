@@ -7,57 +7,59 @@ import java.util.Scanner;
 
 public class UpdateCommand extends CheckCommand implements Command {
 
-    public static final String [] ALLOWED_UPDATE_OPTIONS = {"first name", "last name", "email", "phone number"};
-    public String newText;
+    private static final String [] ALLOWED_UPDATE_OPTIONS = {"first name", "last name", "email", "phone number"};
+    private String newText;
+    private int indexToUpdate;
+    private Guest guestToModify;
 
-    public UpdateCommand(GuestList guestList, Scanner sc){
+    UpdateCommand(GuestList guestList, Scanner sc){
         super(guestList, true);
-
         // What field am I looking for
         int fieldToLookFor = userPromptType(sc);
-
         // Prompt an info about the user we're looking for:
         String lookingFor = userPromptInfo(sc, fieldToLookFor);
 
-        //Create a guest in parent class
+        // Creating a new Guest with attributes we're looking for;
+        this.guestToModify = new Guest(lookingFor, fieldToLookFor);
+
         // Does the user exist ?
-       if (guestList.isRegistered(super.getGuest())){
-           Guest guest = new Guest(lookingFor, fieldToLookFor);
-           int indexToUpdate = userPromptType(sc);
-           String updatedField = userPromptInfo(sc, indexToUpdate, ALLOWED_UPDATE_OPTIONS);
-           //UPDATE:
-           guest = super.getGuestList().findGuest(guest);
-           guest.updateGuest(updatedField, indexToUpdate);
+       if (guestList.isRegistered(guestToModify)){
+           // This new guest needs to becom a "real" geast from the list --->
+           this.guestToModify = super.getGuestList().findGuest(guestToModify);
+           // Prompt for new type of modification:
+           this.indexToUpdate = userPromptTypeToUpdate(sc);
+           // Prompt for new modification
+           this.newText = userPromptInfo(sc, indexToUpdate, ALLOWED_UPDATE_OPTIONS);
+
+
        }
-
-        // Set guest:
-
-
-        newText = userPromptInfo(sc, fieldToLookFor);
     }
 
-    protected Guest lookForGuest(String lookingFor, int fieldToLookFor){
-        for (Guest guest : getGuestList().findGuest(){
-
-        }
+    int userPromptTypeToUpdate (Scanner sc){
+        System.out.println("What do you want to update? ");
+            int type;
+            for (int i = 1; i <= ALLOWED_UPDATE_OPTIONS.length; i++) {
+                System.out.println(i + "- " + ALLOWED_UPDATE_OPTIONS[i - 1]);
+            }
+            do {
+                System.out.println("Type Number between " + 1 + " and " + ALLOWED_UPDATE_OPTIONS.length);
+                type = sc.nextInt();
+            } while (type < 0|| type > ALLOWED_UPDATE_OPTIONS.length);
+            return type;
     }
-
-
-
-    @Override
-    public int userPromptType (Scanner sc){
-        System.out.println("Who do you want to update? Pick the detail: ");
-        return super.userPromptType(sc);
-    }
-
-    public String userPromptInfo(Scanner sc, int type){
+    protected String userPromptInfo(Scanner sc, int type, String[] ALLOWED){
         System.out.println("Type in new data: ");
-        return super.userPromptInfo(sc, type, ALLOWED_UPDATE_OPTIONS);
+        return super.userPromptInfo(sc, type, ALLOWED);
     }
 
     @Override
     public void execute(){
-        Guest guestToUpdate = super.getGuestList().findGuest(super.getGuest());
-        guestToUpdate.updateGuest(newText, fieldToLookFor);
+        if (guestToModify == null){
+            System.err.println("Error, this guest does not exist");
+        } else{
+            guestToModify.updateGuest(newText, indexToUpdate);
+            System.out.println("Successful update");
+        }
+
     }
 }

@@ -1,6 +1,5 @@
 package RMS.commands;
 
-import RMS.Guest;
 import RMS.GuestList;
 
 import java.util.Scanner;

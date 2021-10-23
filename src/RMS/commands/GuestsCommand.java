@@ -5,11 +5,11 @@ import RMS.GuestList;
 
 import java.util.ArrayList;
 
-public class Guests implements Command{
+public class GuestsCommand implements Command{
 
     ArrayList<Guest> allGuests;
 
-    Guests(GuestList guestList){
+    GuestsCommand(GuestList guestList){
         this.allGuests = new ArrayList<>();
         this.allGuests.addAll(guestList.getGuestList());
         this.allGuests.addAll(guestList.getWaitingList());

@@ -4,12 +4,11 @@ import RMS.GuestList;
 
 public class AvailableCommand implements Command{
 
-    int availableSpots;
+    private int availableSpots;
 
     AvailableCommand(GuestList guestList){
         this.availableSpots = guestList.getRemainingSpots();
     }
-
 
     @Override
     public void execute() {

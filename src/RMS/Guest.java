@@ -7,37 +7,30 @@ public class Guest {
     private String phoneNumber;
 
 
-
-
     public Guest(){
         this("", "", "", "");
     }
-
-    public Guest (String lastName, String firstName){
-        this(lastName, firstName, "","");
-    }
-
     public Guest(String oneArgument, int type){
         this();
         switch (type){
             case 1: this.lastName = oneArgument;
-                    this.firstName = oneArgument;
-                    break;
+                this.firstName = oneArgument;
+                break;
             case 2: this.email = oneArgument;
-                    break;
+                break;
             case 3: this.phoneNumber = oneArgument;
-                    break;
+                break;
         }
     }
-
+    public Guest (String lastName, String firstName){
+        this(lastName, firstName, "","");
+    }
     public Guest(String lastName, String firstName, String email, String phoneNumber){
         this.lastName = lastName;
         this.firstName = firstName;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
-
-
 
     @Override
     public boolean equals(Object obj) {
@@ -52,31 +45,15 @@ public class Guest {
                 || email.equals(((Guest) obj).getEmail())
                 || phoneNumber.equals(((Guest) obj).getPhoneNumber()));
     }
-
-    public boolean equals(Object obj, int field){
-        if (obj == null || obj.getClass() != this.getClass()){
-            return false;
-        }
-        switch(field){
-            case 0:
-                return (lastName.equals(((Guest) obj).getLastName()) && firstName.equals(((Guest) obj).getFirstName()));
-            case 1:
-                return (email.equals(((Guest) obj).getEmail()));
-            case 2:
-                return phoneNumber.equals(((Guest) obj).getPhoneNumber());
-            default: return false;
-        }
-    }
-
     public boolean contains(String str) {
         if (str == null) {
             return false;
         }
         str = str.toLowerCase();
-        if( lastName.contains(str)  ||
-            firstName.contains(str) ||
-            email.contains(str)     ||
-            phoneNumber.contains(str)){
+        if( lastName.toLowerCase().contains(str)  ||
+            firstName.toLowerCase().contains(str) ||
+            email.toLowerCase().contains(str)     ||
+            phoneNumber.toLowerCase().contains(str)){
             return true;
         }
         return false;

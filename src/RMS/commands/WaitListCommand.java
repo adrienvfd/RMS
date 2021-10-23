@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class WaitListCommand implements Command {
 
-    ArrayList<Guest> waitList;
+    private ArrayList<Guest> waitList;
 
     WaitListCommand(GuestList guestList){
         this.waitList = guestList.getWaitingList();
@@ -17,8 +17,7 @@ public class WaitListCommand implements Command {
     public void execute() {
         System.out.println("Guests on the wait list:");
         for (Guest guest : waitList){
-            System.out.println(guest.toString());
-
+            System.out.println(guest);
         }
     }
 }

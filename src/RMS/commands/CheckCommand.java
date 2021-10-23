@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class CheckCommand implements Command {
 
-    public static final String [] ALLOWED_CHECK_OPTIONS = {"last name and first name", "email", "phone number"};
+    private static final String [] ALLOWED_CHECK_OPTIONS = {"last name and first name", "email", "phone number"};
     private GuestList guestList;
     private Guest guest;
 
-    public CheckCommand(GuestList guestList, Scanner sc) {
+    CheckCommand(GuestList guestList, Scanner sc) {
         this.guestList = guestList;
 
         // What type of data are we gonna look for
@@ -34,13 +34,12 @@ public class CheckCommand implements Command {
         }
     }
 
-
-    public CheckCommand(GuestList guestList, boolean fromChildren){
+    CheckCommand(GuestList guestList, boolean fromChildren){
         this.guestList = guestList;
         this.guest = null;
     }
 
-    protected int userPromptType(Scanner sc){
+    int userPromptType(Scanner sc){
         int type;
         do {
             System.out.println("How do you want to find the person?: \n" +
@@ -51,23 +50,21 @@ public class CheckCommand implements Command {
         } while (type < 0|| type > ALLOWED_CHECK_OPTIONS.length);
         return type;
     }
-    private String userPromptInfo(Scanner sc, int type){
+    String userPromptInfo(Scanner sc, int type){
         System.out.println("Type " + ALLOWED_CHECK_OPTIONS[type -1] + " detail, then press Enter");
+        sc.nextLine();
         return sc.nextLine();
     }
-    protected String userPromptInfo(Scanner sc, int type, String[] ALLOWED){
+    String userPromptInfo(Scanner sc, int type, String[] ALLOWED){
         System.out.println("Type " + ALLOWED[type -1] + " detail, then press Enter");
         return sc.next();
     }
 
 
-    protected Guest getGuest() {
+    Guest getGuest() {
         return guest;
     }
-    protected void setGuest(Guest guest) {
-        this.guest = guest;
-    }
-    protected GuestList getGuestList() {
+    GuestList getGuestList() {
         return guestList;
     }
 

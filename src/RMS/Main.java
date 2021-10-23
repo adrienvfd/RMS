@@ -11,12 +11,12 @@ public class Main {
         String str = "helper";
         boolean quit = false;
 
-
-        // Print menu
+        // start the app!
         while (!quit) {
             quit = Navigator.navigate(myGuestList, str, sc);
 
             str = sc.next();
         }
+        sc.close();
     }
 }

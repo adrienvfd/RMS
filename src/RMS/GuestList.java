@@ -9,12 +9,14 @@ public class GuestList {
     private ArrayList<Guest> guestList;
     private ArrayList<Guest> waitingList;
 
+    // Just one constructor:
     public GuestList(int maxNumberParticipants) {
         this.maxNumberParticipants = maxNumberParticipants;
         this.guestList = new ArrayList<>(maxNumberParticipants);
         this.waitingList = new ArrayList<>();
     }
 
+    // Logic Methods:
     public int addParticipant(Guest guest){
         if (isRegistered(guest)){
             System.out.println("This user is already registered");
@@ -65,6 +67,7 @@ public class GuestList {
         return false;
     }   // Punctul 3: ce se intelege prin (notificarea se face conform specificatiilor de mai sus
 
+    // Getters:
     public ArrayList<Guest> getGuestList() {
         return guestList;
     }
@@ -86,17 +89,16 @@ public class GuestList {
     public Guest findGuest(Guest guest){
         for (Guest crtGuest : guestList){
             if (crtGuest.equals(guest)){
-                return guest;
+                return crtGuest;
             }
         }
         for (Guest crtGuest : waitingList){
             if (crtGuest.equals(guest)){
-                return guest;
+                return crtGuest;
             }
         }
         return null;
     }
-
     public ArrayList<Guest> partialSearch(String str) {
         ArrayList<Guest> found = new ArrayList<>();
         found.addAll(guestList.stream()

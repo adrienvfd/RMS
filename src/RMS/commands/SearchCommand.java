@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SearchCommand implements Command {
-    String str;
 
-    ArrayList<Guest> foundList;
+    private String str;
+    private ArrayList<Guest> foundList;
 
-    public SearchCommand(GuestList guestList, Scanner sc){
+    SearchCommand(GuestList guestList, Scanner sc){
         System.out.println("Type who you are looking for");
         str = sc.next();
         this.foundList = guestList.partialSearch(str);
@@ -22,6 +22,7 @@ public class SearchCommand implements Command {
         System.out.println("Search Result(s): ");
         for (Guest foundGuest : foundList){
             System.out.println(foundGuest.toString());
+            System.out.println("-------------");
         }
     }
 }
