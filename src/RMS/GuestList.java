@@ -35,11 +35,11 @@ public class GuestList {
 
     }
     public boolean isRegistered(Guest guest){
-        return  guestList.stream().anyMatch(elt -> elt.equals(guest)) ||
-                waitingList.stream().anyMatch(elt -> elt.equals(guest));
+        return  guestList.stream().anyMatch(crtGuest -> crtGuest.equals(guest)) ||
+                waitingList.stream().anyMatch(crtGuest -> crtGuest.equals(guest));
         // Note: equals has been overriden in Guest Class.
     }
-    public boolean cancelRegistration(Guest guest){
+    public boolean remove(Guest guest){
         for (int i = 0; i < guestList.size(); i++){
             if (guest.equals(guestList.get(i))){
                 guestList.remove(i);
@@ -64,6 +64,7 @@ public class GuestList {
         System.err.println("eroare: persoana nu era inscrisa");
         return false;
     }   // Punctul 3: ce se intelege prin (notificarea se face conform specificatiilor de mai sus
+
     public ArrayList<Guest> getGuestList() {
         return guestList;
     }
@@ -81,6 +82,19 @@ public class GuestList {
     }
     public int getTotalNumberOfParticipantsOnLists(){
         return guestList.size() + waitingList.size();
+    }
+    public Guest findGuest(Guest guest){
+        for (Guest crtGuest : guestList){
+            if (crtGuest.equals(guest)){
+                return guest;
+            }
+        }
+        for (Guest crtGuest : waitingList){
+            if (crtGuest.equals(guest)){
+                return guest;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Guest> partialSearch(String str) {

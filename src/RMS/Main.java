@@ -1,5 +1,8 @@
 package RMS;
 
+import RMS.commands.Helper;
+import RMS.commands.Navigator;
+
 import java.util.Scanner;
 
 public class Main {
@@ -15,10 +18,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String str;
         Helper.printHelper();
+        boolean quit = false;
 
-        do {
-             str = sc.next();
-            Helper.navigate(myGuestList, str, sc);
-        }while (!str.equals("exit"));
+        while (!quit) {
+            str = sc.next();
+            quit = Navigator.navigate(myGuestList, str, sc);
+        }
     }
 }

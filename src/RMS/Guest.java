@@ -13,6 +13,11 @@ public class Guest {
         this("", "", "", "");
     }
 
+    public Guest (String lastName, String firstName){
+        this(lastName, firstName, "","");
+    }
+
+
     public Guest(String oneArgument, int type){
         this();
         switch (type){
@@ -26,7 +31,7 @@ public class Guest {
         }
     }
 
-    public Guest(String firstName, String lastName, String email, String phoneNumber){
+    public Guest(String lastName, String firstName, String email, String phoneNumber){
         this.lastName = lastName;
         this.firstName = firstName;
         this.email = email;
@@ -49,20 +54,17 @@ public class Guest {
                 || phoneNumber.equals(((Guest) obj).getPhoneNumber()));
     }
 
-    public boolean check(Object obj, int field){
+    public boolean equals(Object obj, int field){
         if (obj == null || obj.getClass() != this.getClass()){
             return false;
         }
         switch(field){
             case 0:
                 return (lastName.equals(((Guest) obj).getLastName()) && firstName.equals(((Guest) obj).getFirstName()));
-                break;
             case 1:
                 return (email.equals(((Guest) obj).getEmail()));
-                break;
             case 2:
                 return phoneNumber.equals(((Guest) obj).getPhoneNumber());
-                break;
             default: return false;
         }
     }
@@ -81,6 +83,23 @@ public class Guest {
         return false;
     }
 
+    public void updateGuest(String updatedTxt, int index){
+        switch (index){
+            case 0: this.lastName = updatedTxt;
+                    System.out.println("Last name updated");
+            break;
+            case 1: this.firstName = updatedTxt;
+                    System.out.println("First name updated");
+            break;
+            case 2: this.email = updatedTxt;
+                    System.out.println("Email updated");
+            break;
+            case 3: this.phoneNumber = updatedTxt;
+                    System.out.println("Phone number updated");
+            break;
+        }
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -92,5 +111,13 @@ public class Guest {
     }
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    @Override
+    public String toString(){
+        return "Last Name: " + lastName + "\n" +
+                "First Name: " + firstName +  "\n" +
+                "Email: " + email + "\n" +
+                "Phone number: " + phoneNumber;
     }
 }
