@@ -13,6 +13,6 @@ public class AvailableCommand implements Command{
 
     @Override
     public void execute() {
-        System.out.println("There are " + availableSpots + " available spots.");
+        System.out.println("There are " + availableSpots + " spots available.");
     }
 }

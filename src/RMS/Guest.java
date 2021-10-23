@@ -17,16 +17,15 @@ public class Guest {
         this(lastName, firstName, "","");
     }
 
-
     public Guest(String oneArgument, int type){
         this();
         switch (type){
-            case 0: this.lastName = oneArgument;
+            case 1: this.lastName = oneArgument;
                     this.firstName = oneArgument;
                     break;
-            case 1: this.email = oneArgument;
+            case 2: this.email = oneArgument;
                     break;
-            case 2: this.phoneNumber = oneArgument;
+            case 3: this.phoneNumber = oneArgument;
                     break;
         }
     }
@@ -85,16 +84,16 @@ public class Guest {
 
     public void updateGuest(String updatedTxt, int index){
         switch (index){
-            case 0: this.lastName = updatedTxt;
+            case 1: this.lastName = updatedTxt;
                     System.out.println("Last name updated");
             break;
-            case 1: this.firstName = updatedTxt;
+            case 2: this.firstName = updatedTxt;
                     System.out.println("First name updated");
             break;
-            case 2: this.email = updatedTxt;
+            case 3: this.email = updatedTxt;
                     System.out.println("Email updated");
             break;
-            case 3: this.phoneNumber = updatedTxt;
+            case 4: this.phoneNumber = updatedTxt;
                     System.out.println("Phone number updated");
             break;
         }

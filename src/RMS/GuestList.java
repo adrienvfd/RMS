@@ -17,6 +17,7 @@ public class GuestList {
 
     public int addParticipant(Guest guest){
         if (isRegistered(guest)){
+            System.out.println("This user is already registered");
             return -1;
         }
 
@@ -24,15 +25,14 @@ public class GuestList {
             guestList.add(guest);
             System.out.println("Felicitari! Locul tau la eveniment este confirmat. Te asteptam!");
             return 0;
+        } else{
+            //add on waiting list
+            waitingList.add(guest);
+            System.out.println("Te-ai inscris cu succes in lista de asteptare " +
+                    "si ai primit numarul de ordine "+ waitingList.size() +
+                    ". Te vom notifica daca un loc devine disponibil.");
+            return waitingList.size();
         }
-
-        waitingList.add(guest);
-        System.out.println("Te-ai inscris cu succes in lista de asteptare " +
-                "si ai primit numarul de ordine "+ waitingList.size() +
-                ". Te vom notifica daca un loc devine disponibil.");
-        return waitingList.size();
-
-
     }
     public boolean isRegistered(Guest guest){
         return  guestList.stream().anyMatch(crtGuest -> crtGuest.equals(guest)) ||
@@ -46,10 +46,10 @@ public class GuestList {
 
                 if (waitingList.size() != 0){
                     //add 1st person on waitingList to guestList
-                    guestList.add(waitingList.get(1));
-                    waitingList.remove(i);
+                    guestList.add(waitingList.get(0));
+                    waitingList.remove(0);
                 }
-                System.out.println("persoana a fost stearsa cu succes");
+                System.out.println("persoana " + guest.getFirstName() + " " + guest.getLastName() + " a fost stearsa cu succes");
                 return true;
             }
         }

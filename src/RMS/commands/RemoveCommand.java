@@ -14,6 +14,5 @@ public class RemoveCommand extends CheckCommand implements Command {
     @Override
     public void execute(){
         super.getGuestList().remove(super.getGuest());
-        System.out.println("User " + super.getGuest() + " has been removed");
     }
 }

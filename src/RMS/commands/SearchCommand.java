@@ -21,7 +21,7 @@ public class SearchCommand implements Command {
     public void execute() {
         System.out.println("Search Result(s): ");
         for (Guest foundGuest : foundList){
-            foundGuest.toString();
+            System.out.println(foundGuest.toString());
         }
     }
 }

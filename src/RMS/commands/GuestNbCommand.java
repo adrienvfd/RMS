@@ -11,6 +11,6 @@ public class GuestNbCommand implements Command {
 
     @Override
     public void execute() {
-        System.out.println("There are " + guestNb + "participants.");
+        System.out.println("There are " + guestNb + " participants.");
     }
 }

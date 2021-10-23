@@ -17,7 +17,8 @@ public class WaitListCommand implements Command {
     public void execute() {
         System.out.println("Guests on the wait list:");
         for (Guest guest : waitList){
-            guest.toString();
+            System.out.println(guest.toString());
+
         }
     }
 }

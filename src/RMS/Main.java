@@ -1,28 +1,22 @@
 package RMS;
-
-import RMS.commands.Helper;
 import RMS.commands.Navigator;
 
 import java.util.Scanner;
 
 public class Main {
 
-    /*
-
-     */
-
-
-
     public static void main(String[] args) {
-        GuestList myGuestList = new GuestList(10);
+        GuestList myGuestList = new GuestList(2);
         Scanner sc = new Scanner(System.in);
-        String str;
-        Helper.printHelper();
+        String str = "helper";
         boolean quit = false;
 
+
+        // Print menu
         while (!quit) {
-            str = sc.next();
             quit = Navigator.navigate(myGuestList, str, sc);
+
+            str = sc.next();
         }
     }
 }

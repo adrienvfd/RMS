@@ -21,7 +21,9 @@ public class Helper implements Command {
                         "waitlist_no  - Numarul de persoane din lista de asteptare\n" +
                         "subscribe_no - Numarul total de persoane inscrise\n" +
                         "search       - Cauta toti invitatii conform sirului de caractere introdus\n" +
-                        "quit         - Inchide aplicatia"
+                        "quit         - Inchide aplicatia" + "\n" +
+                        "--------------- \n" +
+                        "What are you looking for?"
         );
     }
     public void execute(){

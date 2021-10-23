@@ -21,7 +21,6 @@ public class Navigator {
                         "quit         - Inchide aplicatia"
 
      */
-
     public static boolean navigate(GuestList guestList, String str, Scanner sc){
         Command cmd = null;
         if (str.equals("help")){
@@ -32,9 +31,11 @@ public class Navigator {
             cmd = (Command) new CheckCommand(guestList, sc);
         } else if (str.equals("remove")){
             cmd = (Command) new RemoveCommand(guestList, sc);
-        } else if (str.equals("update")){
-            cmd = (Command)  new UpdateCommand(guestList, sc);
-        } else if (str.equals("waitList")){
+        } else if (str.equals("update")) {
+            cmd = (Command) new UpdateCommand(guestList, sc);
+        } else if (str.equals("guests")){
+            cmd = (Command) new Guests(guestList);
+        } else if (str.equals("waitlist")){
             cmd = (Command) new WaitListCommand(guestList);
         } else if (str.equals("available")){
             cmd = (Command) new AvailableCommand(guestList);
@@ -44,9 +45,9 @@ public class Navigator {
         } else if (str.equals("waitlist_no")){
             cmd = (Command) new WaitListNb(guestList);
         } else if (str.equals("subscribe_no")){
+            cmd = (Command) new SubscribeNbCommand(guestList);
         } else if (str.equals("search")){
             cmd = (Command) new SearchCommand(guestList, sc);
-
         } else if (str.equals("quit")){
             return true;
         } else {
@@ -56,7 +57,6 @@ public class Navigator {
         if (cmd != null){
             cmd.execute();
         }
-
         return false;
 
     }
