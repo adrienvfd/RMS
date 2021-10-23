@@ -1,17 +1,13 @@
 package RMS;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class GuestList {
 
     private final int maxNumberParticipants;
     private ArrayList<Guest> guestList;
     private ArrayList<Guest> waitingList;
-
-
 
     public GuestList(int maxNumberParticipants) {
         this.maxNumberParticipants = maxNumberParticipants;
@@ -38,13 +34,11 @@ public class GuestList {
 
 
     }
-
     public boolean isRegistered(Guest guest){
         return  guestList.stream().anyMatch(elt -> elt.equals(guest)) ||
                 waitingList.stream().anyMatch(elt -> elt.equals(guest));
         // Note: equals has been overriden in Guest Class.
     }
-
     public boolean cancelRegistration(Guest guest){
         for (int i = 0; i < guestList.size(); i++){
             if (guest.equals(guestList.get(i))){
@@ -69,31 +63,22 @@ public class GuestList {
         }
         System.err.println("eroare: persoana nu era inscrisa");
         return false;
-    }
-
-    // Punctul 3: ce se intelege prin (notificarea se face conform specificatiilor de mai sus
-
-
+    }   // Punctul 3: ce se intelege prin (notificarea se face conform specificatiilor de mai sus
     public ArrayList<Guest> getGuestList() {
         return guestList;
     }
-
     public ArrayList<Guest> getWaitingList() {
         return waitingList;
     }
-
     public int getRemainingSpots(){
         return this.maxNumberParticipants - guestList.size();
     }
-
     public int getNumberOfParticipants(){
         return guestList.size();
     }
-
     public int getWaitingListNumberOfParticipants(){
         return waitingList.size();
     }
-
     public int getTotalNumberOfParticipantsOnLists(){
         return guestList.size() + waitingList.size();
     }
