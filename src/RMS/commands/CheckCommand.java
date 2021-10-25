@@ -15,7 +15,6 @@ public class CheckCommand implements Command {
 
         // What type of data are we gonna look for
         int type = userPromptType(sc);
-        sc.nextLine();
 
         // What data are we looking for:
         String info = userPromptInfo(sc, type);
@@ -33,7 +32,6 @@ public class CheckCommand implements Command {
             }
         }
     }
-
     CheckCommand(GuestList guestList, boolean fromChildren){
         this.guestList = guestList;
         this.guest = null;
@@ -48,16 +46,16 @@ public class CheckCommand implements Command {
                     "3 - phone number");
             type = sc.nextInt();
         } while (type < 0|| type > ALLOWED_CHECK_OPTIONS.length);
+        sc.nextLine();
         return type;
     }
     String userPromptInfo(Scanner sc, int type){
         System.out.println("Type " + ALLOWED_CHECK_OPTIONS[type -1] + " detail, then press Enter");
-        sc.nextLine();
         return sc.nextLine();
     }
     String userPromptInfo(Scanner sc, int type, String[] ALLOWED){
         System.out.println("Type " + ALLOWED[type -1] + " detail, then press Enter");
-        return sc.next();
+        return sc.nextLine();
     }
 
 

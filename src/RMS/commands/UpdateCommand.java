@@ -45,10 +45,10 @@ public class UpdateCommand extends CheckCommand implements Command {
                 System.out.println("Type Number between " + 1 + " and " + ALLOWED_UPDATE_OPTIONS.length);
                 type = sc.nextInt();
             } while (type < 0|| type > ALLOWED_UPDATE_OPTIONS.length);
+            sc.nextLine();
             return type;
     }
     protected String userPromptInfo(Scanner sc, int type, String[] ALLOWED){
-        System.out.println("Type in new data: ");
         return super.userPromptInfo(sc, type, ALLOWED);
     }
 
