@@ -15,9 +15,14 @@ public class WaitListCommand implements Command {
 
     @Override
     public void execute() {
-        System.out.println("Guests on the wait list:");
-        for (Guest guest : waitList){
-            System.out.println(guest);
+
+        if (waitList.size() == 0){
+            System.out.println("The waiting list is empty");
+        } else {
+            System.out.println("Guests on the wait list:");
+            for (Guest guest : waitList) {
+                System.out.println(guest);
+            }
         }
     }
 }

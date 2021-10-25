@@ -1,11 +1,5 @@
 package RMS.commands;
 
-import RMS.GuestList;
-
-
-
-import java.util.Scanner;
-
 public class HelperCommand implements Command {
     public static void printHelper(){
         System.out.println(
@@ -23,13 +17,10 @@ public class HelperCommand implements Command {
                         "subscribe_no   - Number total of people on main list AND waiting list \n" +
                         "search         - Search a person in all the lists from using a string. \n" +
                         "quit           - Exit the app \n" +
-                        "--------------- \n" +
-                        "What are you looking for?"
+                        "--------------- \n"
         );
     }
     public void execute(){
         printHelper();
     }
-
-
 }

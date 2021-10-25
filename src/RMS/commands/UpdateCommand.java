@@ -30,8 +30,8 @@ public class UpdateCommand extends CheckCommand implements Command {
            this.indexToUpdate = userPromptTypeToUpdate(sc);
            // Prompt for new modification
            this.newText = userPromptInfo(sc, indexToUpdate, ALLOWED_UPDATE_OPTIONS);
-
-
+       } else {
+            guestToModify = null;
        }
     }
 

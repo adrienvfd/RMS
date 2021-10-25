@@ -37,7 +37,7 @@ public class Navigator {
             System.out.println("Closing application...");
             return true;
         } else {
-            cmd = (Command) new HelperCommand();
+            System.out.println("Type \"help\" to show the help menu");;
         }
 
         if (cmd != null){
@@ -45,22 +45,4 @@ public class Navigator {
         }
         return false;
     }
-
-    /*
-    NOTE:
-                            "help         - Afiseaza aceasta lista de comenzi\n" +
-                        "add          - Adauga o noua persoana (inscriere)\n" +
-                        "check        - Verifica daca o persoana este inscrisa la eveniment\n" +
-                        "remove       - Sterge o persoana existenta din lista\n" +
-                        "update       - Actualizeaza detaliile unei persoane\n" +
-                        "guests       - Lista de persoane care participa la eveniment\n" +
-                        "waitlist     - Persoanele din lista de asteptare\n" +
-                        "available    - Numarul de locuri libere\n" +
-                        "guests_no    - Numarul de persoane care participa la eveniment\n" +
-                        "waitlist_no  - Numarul de persoane din lista de asteptare\n" +
-                        "subscribe_no - Numarul total de persoane inscrise\n" +
-                        "search       - Cauta toti invitatii conform sirului de caractere introdus\n" +
-                        "quit         - Inchide aplicatia"
-
-     */
 }

@@ -51,7 +51,7 @@ public class GuestList {
                     guestList.add(waitingList.get(0));
                     waitingList.remove(0);
                 }
-                System.out.println("persoana " + guest.getFirstName() + " " + guest.getLastName() + " a fost stearsa cu succes");
+                System.out.println("Person " + guest.getFirstName() + " " + guest.getLastName() + " has been successfully removed");
                 return true;
             }
         }
@@ -59,11 +59,11 @@ public class GuestList {
         for (int i = 0; i < waitingList.size(); i++){
             if (guest.equals(waitingList.get(i))){
                 waitingList.remove(i);
-                System.out.println("persoana a fost stearsa cu succes");
+                System.out.println("Person " + guest.getFirstName() + " " + guest.getLastName() + " has been successfully removed from the waiting list");
                 return true;
             }
         }
-        System.err.println("eroare: persoana nu era inscrisa");
+        System.err.println("ERROR: this guest is not registered");
         return false;
     }   // Punctul 3: ce se intelege prin (notificarea se face conform specificatiilor de mai sus
 

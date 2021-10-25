@@ -6,17 +6,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        GuestList myGuestList = new GuestList(2);
         Scanner sc = new Scanner(System.in);
+        System.out.println("Bun venit! Introduceti numarul de locuri disponibile:");
+        GuestList myGuestList = new GuestList(sc.nextInt());
+
+        // Launch app
         String str = "helper";
         boolean quit = false;
 
-        // start the app!
-        while (!quit) {
+        while (true) {
             quit = Navigator.navigate(myGuestList, str, sc);
-
+            if (quit){
+                break;
+            }
             str = sc.next();
-        }
+            }
         sc.close();
     }
 }
