@@ -1,0 +1,5 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÆÀûı
+T
+java:S6126"2Replace this String concatenation with Text block.(™¹»ûÿÿÿÿ8ı²úíÊ/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§ıîó

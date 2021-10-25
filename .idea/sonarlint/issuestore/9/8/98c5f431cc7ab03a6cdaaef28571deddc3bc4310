@@ -1,0 +1,20 @@
+
+f
+java:S1206$"PThis class overrides "equals()" and should therefore also override "hashCode()".(ÜÑã
+7	java:S131""Add a default case to this switch.(ÜŸ•
+€
+java:S1157,"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(Ê½¬É8ƒ¸«¸Ë/
+€
+java:S1157,"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(Ê½¬É8ò×¬¸Ë/
+…
+java:S1157-"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(¾ÃÑ§şÿÿÿÿ8áŸ­¸Ë/
+…
+java:S1157."cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(šºÀ§ıÿÿÿÿ8íª®¸Ë/
+W
+java:S11265"AReplace this if-then-else statement by a single return statement.(Ø¤ı‡
+C	java:S131?""Add a default case to this switch.(øãş•ÿÿÿÿÿ8×àíÊ/
+S	java:S106A"9Replace this use of System.out or System.err by a logger.(³ûÿÿÿÿ
+S	java:S106D"9Replace this use of System.out or System.err by a logger.(Ûşşúÿÿÿÿ
+N	java:S106G"9Replace this use of System.out or System.err by a logger.(êĞí
+S	java:S106J"9Replace this use of System.out or System.err by a logger.(¬äÁÓùÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ê¬’Òÿÿÿÿÿ
