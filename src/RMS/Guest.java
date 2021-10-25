@@ -41,9 +41,9 @@ public class Guest {
             - lastName && firstName are the same,
             - Or if they have the same email
             - Or if they have the same phone Number */
-        return (lastName.equals(((Guest) obj).getLastName()) && firstName.equals(((Guest) obj).getFirstName())
-                || email.equals(((Guest) obj).getEmail())
-                || phoneNumber.equals(((Guest) obj).getPhoneNumber()));
+        return (lastName.toLowerCase().equals(((Guest) obj).getLastName().toLowerCase()) && firstName.toLowerCase().equals(((Guest) obj).getFirstName().toLowerCase())
+                || email.toLowerCase().equals(((Guest) obj).getEmail().toLowerCase())
+                || phoneNumber.toLowerCase().equals(((Guest) obj).getPhoneNumber().toLowerCase()));
     }
     public boolean contains(String str) {
         if (str == null) {
