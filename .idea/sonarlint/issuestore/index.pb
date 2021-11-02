@@ -3,8 +3,6 @@
 RMSProject.iml,2\e\2e89f7b9e0254e90bbfc76b81717f2845c2f2062
 M
 src/RMS/commands/Command.java,7\8\78970467b57268e8e0dfaf591d4c75ef1e5a2784
-P
- src/RMS/commands/WaitListNb.java,d\4\d4f21b6d87c226ae4b4d3c9d146d72bd92085196
 X
 (src/RMS/commands/SubscribeNbCommand.java,b\0\b071373f131d87869b0c43d2a68d05d0fce6e174
 S
@@ -17,23 +15,3 @@ P
  src/RMS/commands/AddCommand.java,8\4\8429a387254f3a9b841bc37e54505fd91f11db4f
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-F
-src/RMS/GuestList.java,f\b\fb9043da91a50bf2425cace5deb3579abded4e8e
-A
-src/RMS/Main.java,1\0\104a2f8ede544d4179bb3898f43d6cfcc7008020
-U
-%src/RMS/commands/WaitListCommand.java,5\0\502cd398ce1123fc0cac738ca898d2f9728efe87
-S
-#src/RMS/commands/HelperCommand.java,3\4\349a40c28739b4229314a933e1daebf16111f017
-B
-src/RMS/Guest.java,9\8\98c5f431cc7ab03a6cdaaef28571deddc3bc4310
-S
-#src/RMS/commands/GuestsCommand.java,3\a\3a2bb4d3b83f8d9d266f4f48a5f85090f8dbb1ce
-O
-src/RMS/commands/Navigator.java,7\d\7df518dd4d1529d1fe14941c63b65db99d022cd8
-S
-#src/RMS/commands/RemoveCommand.java,9\6\9634dc1960df4d3f0e812953775b21a0728ae72b
-R
-"src/RMS/commands/CheckCommand.java,9\d\9d6efe94ede14a5b91ef66c088760dff6f340d52
-S
-#src/RMS/commands/UpdateCommand.java,2\9\290090033a49fc0127a08320f3d37617ff2b618d

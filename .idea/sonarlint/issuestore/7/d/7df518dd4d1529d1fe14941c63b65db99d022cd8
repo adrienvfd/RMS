@@ -1,32 +1,0 @@
-
-P
-java:S1118":Add a private constructor to hide the implicit public one.(ê¶û»
-E
-java:S1905"*Remove this unnecessary cast to "Command".(ÿ—Ãïøÿÿÿÿ
-@
-java:S1905"*Remove this unnecessary cast to "Command".(±Æ¤Ü
-E
-java:S1905"*Remove this unnecessary cast to "Command".(Ñ³«Õûÿÿÿÿ
-E
-java:S1905"*Remove this unnecessary cast to "Command".( ‹¦†ûÿÿÿÿ
-?
-java:S1905"*Remove this unnecessary cast to "Command".(³ŒáM
-E
-java:S1905"*Remove this unnecessary cast to "Command".(Ã‰şìşÿÿÿÿ
-@
-java:S1905"*Remove this unnecessary cast to "Command".(ÅÖ¹¯
-@
-java:S1905"*Remove this unnecessary cast to "Command".(á¥ì
-@
-java:S1905"*Remove this unnecessary cast to "Command".(¦¤‡
-E
-java:S1905"*Remove this unnecessary cast to "Command".(ğ€‹Şÿÿÿÿÿ
-E
-java:S1905!"*Remove this unnecessary cast to "Command".(â‰½­øÿÿÿÿ
-?
-java:S1905#"*Remove this unnecessary cast to "Command".(Ãõ°"
-S	java:S106%"9Replace this use of System.out or System.err by a logger.(š©ç¢ÿÿÿÿÿ
-S	java:S106("9Replace this use of System.out or System.err by a logger.(øÙµˆıÿÿÿÿ
-7
-java:S1116("Remove this empty statement.(øÙµˆıÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§ıîó

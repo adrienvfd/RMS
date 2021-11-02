@@ -28,7 +28,7 @@ public class Navigator {
         } else if (str.equals("guests_no")){
             cmd = (Command) new GuestNbCommand(guestList);
         } else if (str.equals("waitlist_no")){
-            cmd = (Command) new WaitListNb(guestList);
+            cmd = (Command) new WaitListNbCommand(guestList);
         } else if (str.equals("subscribe_no")){
             cmd = (Command) new SubscribeNbCommand(guestList);
         } else if (str.equals("search")){

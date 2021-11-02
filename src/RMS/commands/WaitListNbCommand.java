@@ -2,11 +2,11 @@ package RMS.commands;
 
 import RMS.GuestList;
 
-public class WaitListNb implements Command {
+public class WaitListNbCommand implements Command {
 
     private int waitListNb;
 
-    WaitListNb(GuestList guestList){ this.waitListNb = guestList.getWaitingListNumberOfParticipants(); }
+    WaitListNbCommand(GuestList guestList){ this.waitListNb = guestList.getWaitingListNumberOfParticipants(); }
 
     @Override
     public void execute() {
