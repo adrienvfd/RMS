@@ -1,0 +1,22 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(®Žžüÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ó˜æð
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(ýñáóþÿÿÿÿ
+N	java:S1066"9Replace this use of System.out or System.err by a logger.(ËˆÃ
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(ëÛ”Çÿÿÿÿÿ
+N	java:S106B"9Replace this use of System.out or System.err by a logger.(áÜº
+h
+java:S6204j"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ã¤£’
+h
+java:S6204m"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ã¤£’
+†
+java:S1319G"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ØÀ¦÷
+†
+java:S1319J"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ì° «
+†
+java:S1319f"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ûöÌÙ
+T
+java:S11551">Use isEmpty() to check whether the collection is empty or not.(«å•º
+3
+java:S1700	"Rename field "guestList"(»šèÇÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ê¬’Òÿÿÿÿÿ

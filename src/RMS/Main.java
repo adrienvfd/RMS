@@ -14,13 +14,10 @@ public class Main {
         String str = "helper";
         boolean quit = false;
 
-        while (true) {
+        while (!quit) {
             quit = Navigator.navigate(myGuestList, str, sc);
-            if (quit){
-                break;
-            }
             str = sc.next();
-            }
+        }
         sc.close();
     }
 }

@@ -1,7 +1,6 @@
 package RMS.commands;
 
 import RMS.GuestList;
-
 import java.util.Scanner;
 
 public class Navigator {

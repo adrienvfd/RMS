@@ -2,6 +2,8 @@ package RMS.commands;
 
 import RMS.GuestList;
 import RMS.Guest;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CheckCommand implements Command {
@@ -14,7 +16,9 @@ public class CheckCommand implements Command {
         this.guestList = guestList;
 
         // What type of data are we gonna look for
-        int type = userPromptType(sc);
+        int type;
+        type = userPromptType(sc);
+
 
         // What data are we looking for:
         String info = userPromptInfo(sc, type);
@@ -37,16 +41,28 @@ public class CheckCommand implements Command {
         this.guest = null;
     }
 
-    int userPromptType(Scanner sc){
-        int type;
-        do {
-            System.out.println("How do you want to find the person?: \n" +
-                    "1 - last name & first name \n" +
-                    "2 - email \n" +
-                    "3 - phone number");
-            type = sc.nextInt();
-        } while (type < 0|| type > ALLOWED_CHECK_OPTIONS.length);
-        sc.nextLine();
+    int userPromptType(Scanner sc) {
+        int type = -1;
+        while (true) {
+            try {
+                System.out.println("How do you want to find the person?: \n" +
+                        "1 - last name & first name \n" +
+                        "2 - email \n" +
+                        "3 - phone number");
+                type = sc.nextInt();
+
+                if (type <= 0 || type > ALLOWED_CHECK_OPTIONS.length) {
+                    throw new IndexOutOfBoundsException();
+                }
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                System.err.println("Error, you have to write a number between 1 - 3");
+                sc.nextLine();
+            } catch (InputMismatchException e) {
+                System.err.println("Error, this was not a number!!!");
+                sc.nextLine();
+            }
+        }
         return type;
     }
     String userPromptInfo(Scanner sc, int type){
