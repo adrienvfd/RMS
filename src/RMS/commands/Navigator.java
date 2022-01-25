@@ -30,8 +30,10 @@ public class Navigator {
             cmd = (Command) new WaitListNbCommand(guestList);
         } else if (str.equals("subscribe_no")){
             cmd = (Command) new SubscribeNbCommand(guestList);
-        } else if (str.equals("search")){
+        } else if (str.equals("search")) {
             cmd = (Command) new SearchCommand(guestList, sc);
+        } else if (str.equals("reset")){
+            cmd = (Command) new ResetCommand(guestList);
         } else if (str.equals("quit")){
             System.out.println("Closing application...");
             return true;
@@ -41,7 +43,10 @@ public class Navigator {
 
         if (cmd != null){
             cmd.execute();
+
+            if (cmd instanceof ResetCommand) return true;
         }
+
         return false;
     }
 }

@@ -16,6 +16,7 @@ public class HelperCommand implements Command {
                         "waitlist_no    - Number of people on the waiting list \n" +
                         "subscribe_no   - Number total of people on main list AND waiting list \n" +
                         "search         - Search a person in all the lists from using a string. \n" +
+                        "reset          - Reset and exit app \n" +
                         "quit           - Exit the app \n" +
                         "--------------- \n"
         );

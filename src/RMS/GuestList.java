@@ -1,22 +1,40 @@
 package RMS;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class GuestList {
+public class GuestList implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     private final int maxNumberParticipants;
     private ArrayList<Guest> guestList;
     private ArrayList<Guest> waitingList;
+    private boolean resetGuestList;
 
     // Just one constructor:
     public GuestList(int maxNumberParticipants) {
+        this.resetGuestList = false;
         this.maxNumberParticipants = maxNumberParticipants;
         this.guestList = new ArrayList<>(maxNumberParticipants);
         this.waitingList = new ArrayList<>();
     }
 
     // Logic Methods:
+    public void resetGuestList(){
+        try {
+            this.resetGuestList = true;
+            File gl = new File("guestList.dat");
+            gl.delete();
+        } catch (Exception e) {
+            System.out.println("Reset failed");
+        }
+        System.out.println("guestlist resseted");
+    }
+
+    public boolean getResetGuestList(){
+        return this.resetGuestList;
+    }
     public int addParticipant(Guest guest){
         if (isRegistered(guest)){
             System.out.println("This user is already registered");
@@ -108,5 +126,25 @@ public class GuestList {
                 .filter(elt -> elt.contains(str))
                 .collect(Collectors.toList()));
         return found;
+    }
+
+
+
+    public static void writeToBinaryFile(GuestList data) throws IOException {
+        try(ObjectOutputStream binaryFileOut = new ObjectOutputStream(
+                new BufferedOutputStream(new FileOutputStream("guestList.dat")))) {
+            binaryFileOut.writeObject(data);
+        }
+    }
+
+    public static GuestList readFromBinaryFile() throws IOException, ClassNotFoundException {
+        GuestList data = null;
+
+        try(ObjectInputStream binaryFileIn = new ObjectInputStream(
+                new BufferedInputStream(new FileInputStream("guestList.dat")))) {
+            data = (GuestList) binaryFileIn.readObject();
+
+        }
+        return data;
     }
 }

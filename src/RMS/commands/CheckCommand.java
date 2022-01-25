@@ -50,6 +50,7 @@ public class CheckCommand implements Command {
                         "2 - email \n" +
                         "3 - phone number");
                 type = sc.nextInt();
+                sc.nextLine();
 
                 if (type <= 0 || type > ALLOWED_CHECK_OPTIONS.length) {
                     throw new IndexOutOfBoundsException();
